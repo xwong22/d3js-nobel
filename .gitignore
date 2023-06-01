@@ -1,3 +1,6 @@
 .ipynb_checkpoints
 dataverse_files
-EDA.ipynb
+preview
+*.ipynb
+*.pptx
+*.zip

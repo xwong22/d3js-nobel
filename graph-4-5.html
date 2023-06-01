@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Graph 4 & 5</title>
+    <link rel="icon" href="src/title-logo.png">
+    <style>
+        h2 {
+            margin: 0;
+        }
+
+        body {
+            max-width: 100%;
+            margin: auto;
+            text-align: center;
+            height: 2000px;
+        }
+
+        .space-200 {
+            height: 200px;
+        }
+
+        .space-400 {
+            height: 400px;
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        .section {
+            height: 767px;
+            width: 100%;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        .black-section {
+            background-color: black;
+        }
+
+        .hidden-section {
+            position: fixed;
+            top: 1200px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .fixed-center {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .absolute-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+
+        .initial-transparent {
+            opacity: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .column {
+            flex: 33.33%;
+        }
+
+        .text {
+            color: aliceblue;
+            font-family: Candara;
+        }
+
+        /* 专属数据可视化的CSS */
+
+        .tooltip {
+            position: absolute;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 序言 -->
+    <div id="section1" class="black-section section">
+        <div class="section-content absolute-center">
+            <img src="src/awards-dream.gif" height="600" width="600">
+            <h1 class="text">Have you ever dreamed about becoming a Nobel laureate?</h1>
+        </div>
+    </div>
+
+    <div class="black space-200"></div>
+
+    <div class="black-section section">
+        <div class="section-content absolute-center">
+            <h2 class="text">What does it actually take to be one?</h2>
+        </div>
+    </div>
+
+    <div class="black-section section">
+        <div class="section-content absolute-center">
+            <img src="src/hardwork.gif" height="300" width="300">
+            <br>
+            <h2 class="text">Is it hardwork?</h2>
+        </div>
+    </div>
+
+    <div class="black space-200"></div>
+
+    <div class="black-section section">
+        <div class="section-content absolute-center">
+            <img id="meteor-gif" src="src/meteor-shower.gif" height="600" width="600"
+                class="fixed-center initial-transparent">
+            <h2 id="luck-text" class="text absolute-center initial-transparent">Is it luck?</h2>
+        </div>
+    </div>
+
+    <div class="black space-200"></div>
+
+    <div class="black-section section">
+        <div class="section-content absolute-center">
+            <h2 class="text">Let's find out!</h2>
+        </div>
+    </div>
+
+    <div class="space-200"></div>
+
+    <!-- 正文 -->
+
+    <div class="section">
+        <div class="section-content absolute-center">
+            <h2>Is it easy to be awarded more than once?</h2>
+            <div id="container_4" class="container" style="position:relative">
+                <div id="tooltip_4" class="tooltip"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section">
+        <div class="section-content absolute-center">
+            <h2>Container_5</h2>
+            <div id="container_5" class="container" style="position:relative">
+
+                <div id="container_chem_5" class="column">
+                    <h3>Chemistry</h1>
+                        <div id="tooltip_chem_5" class="tooltip"></div>
+                </div>
+
+                <div id="container_phy_5" class="column">
+                    <h3>Physics</h1>
+                </div>
+
+                <div id="container_med_5" class="column">
+                    <h3>Medicine</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>TEST</h2>
+
+</body>
+
+<!-- 导入D3 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<!-- 导入D3的颜色 -->
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<!-- 数据可视化的js file-->
+<script src="graph-4-5.js"></script>
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<!-- 处理Scroll Events -->
+<script type="text/javascript">
+    // var currentElem = document.getElementById("section1").nextElementSibling;
+    // console.log(currentElem);
+    // 根据window.scrollY调整透明度
+    $(document).on("scroll", function () {
+        console.log(window.scrollY)
+        if (window.scrollY > 1800 && window.scrollY < 3400) {
+            $("#meteor-gif").css("opacity", (window.scrollY - 2000) / 800);
+            $("#luck-text").css("opacity", (window.scrollY - 2000) / 800);
+        } else {
+            $("#meteor-gif").css("opacity", 0);
+            $("#luck-text").css("opacity", 0);
+        }
+    })
+</script>
+
+</html>
