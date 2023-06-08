@@ -112,12 +112,10 @@
         console.log(bodyHeight)
         console.log(window.scrollY / innerHeight)
         // console.log("stop", STOP)
-        if (160 - window.scrollY / innerHeight * 110 > 55) {
+        if (160 - window.scrollY / innerHeight * 110 > 45) {
+            $("#start-btn").css("opacity", 0);
             $("#section1 .elem2").css("top", (160 - (window.scrollY) / innerHeight * 110)  + "%");
             console.log("here", 160 - window.scrollY / innerHeight * 110, "%")
-        }
-        if (window.scrollY < 700) {
-            $("#start-btn").css("opacity", 0);
         } else {
             $("#start-btn").css("opacity", 100);
         }

@@ -70,7 +70,7 @@ var fill = d3
 
 
 var MARGIN_2 = { top: 30, right: 25, bottom: 20, left: 25 },
-    WIDTH_2 = 1200 - MARGIN_2.left - MARGIN_2.right,
+    WIDTH_2 = 800 - MARGIN_2.left - MARGIN_2.right,
     HEIGHT_2 = 800 - MARGIN_2.top - MARGIN_2.bottom,
     INNER_RADIUS_2 = Math.min(WIDTH_2, HEIGHT_2) * 0.35,
     OUTER_RADIUS_2 = INNER_RADIUS_2 * 1.04;

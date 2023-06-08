@@ -240,10 +240,10 @@ d3.json("assets/data/links_prized_more_than_1.json").then(function (data) {
 
 // 定义常数
 var MARGIN_5 = { top: 40, right: 40, bottom: 40, left: 40 }
-var WIDTH_5 = 420 - MARGIN_5.left - MARGIN_5.right
-var HEIGHT_5 = 420 - MARGIN_5.top - MARGIN_5.bottom
+var WIDTH_5 = 340 - MARGIN_5.left - MARGIN_5.right
+var HEIGHT_5 = 340 - MARGIN_5.top - MARGIN_5.bottom
 
-var TRIANGLE_HEIGHT = 300
+var TRIANGLE_HEIGHT = 250
 var START_YR = 1907
 
 // 定义三角形的坐标
