@@ -1,6 +1,9 @@
 .ipynb_checkpoints
 dataverse_files
 preview
+graph-1
+graph-6
+test
 *.ipynb
 *.pptx
 *.zip

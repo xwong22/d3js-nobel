@@ -4,9 +4,17 @@
 <head>
     <meta charset="utf-8">
     <title>Graph 4 & 5</title>
-    <link rel="icon" href="src/title-logo.png">
+    <link rel="icon" href="assets/src/title-logo.png">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+
     <style>
-        h2 {
+        h1.title {
+            text-shadow: 3px 3px grey;
+        }
+
+        h2.title {
             margin: 0;
         }
 
@@ -15,6 +23,9 @@
             margin: auto;
             text-align: center;
             height: 2000px;
+            background-color: #EEEBD7;
+            /* background-image: url("src/nobel-logo.png");
+            background-size: 100px; */
         }
 
         .space-200 {
@@ -30,7 +41,7 @@
         }
 
         .section {
-            height: 767px;
+            min-height: 767px;
             width: 100%;
             vertical-align: middle;
             position: relative;
@@ -45,6 +56,16 @@
             top: 1200px;
             left: 50%;
             transform: translateX(-50%);
+        }
+
+        .description {
+            width: 60%;
+            margin: auto;
+            border: 1px dotted black;
+            padding: 20px;
+            box-shadow: 3px 3px black;
+            background-color: whitesmoke;
+            text-align: justify;
         }
 
         .fixed-center {
@@ -69,10 +90,32 @@
         .container {
             display: flex;
             justify-content: center;
+            align-items: center;
         }
 
         .column {
             flex: 33.33%;
+        }
+
+        .title {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1.title {
+            margin: 0;
+            font-size: 70px;
+            font-weight: bolder;
+        }
+
+        h2.title {
+            margin: 0;
+            font-size: 40px;
+            font-weight: lighter;
+            letter-spacing: 10px;
+        }
+
+        a {
+            color: black;
         }
 
         .text {
@@ -80,14 +123,32 @@
             font-family: Candara;
         }
 
+        .conclusion-list {
+            margin: 10px;
+        }
+
         /* 专属数据可视化的CSS */
 
         .tooltip {
+            font-size: 15px;
             position: absolute;
             padding: 10px;
             background-color: #fff;
             border: 1px solid #ccc;
+            border-radius: 5px;
             visibility: hidden;
+        }
+
+        .custom-button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #eee;
+            border: none;
+            cursor: pointer;
+        }
+
+        .custom-button:hover {
+            background-color: #ddd;
         }
     </style>
 </head>
@@ -97,8 +158,10 @@
     <!-- 序言 -->
     <div id="section1" class="black-section section">
         <div class="section-content absolute-center">
-            <img src="src/awards-dream.gif" height="600" width="600">
-            <h1 class="text">Have you ever dreamed about becoming a Nobel laureate?</h1>
+            <img src="assets/src/awards-dream.gif" height="580" width="580">
+            <h1 class="text">Have you ever dreamed of becoming a Nobel laureate?</h1>
+            <p id="instruction-text" style="font-family:monospace; color:aliceblue" class="initial-transparent">Scroll
+                down to continue...</p>
         </div>
     </div>
 
@@ -112,7 +175,7 @@
 
     <div class="black-section section">
         <div class="section-content absolute-center">
-            <img src="src/hardwork.gif" height="300" width="300">
+            <img src="assets/src/hardwork.gif" height="300" width="300">
             <br>
             <h2 class="text">Is it hardwork?</h2>
         </div>
@@ -121,9 +184,8 @@
     <div class="black space-200"></div>
 
     <div class="black-section section">
-        <div class="section-content absolute-center">
-            <img id="meteor-gif" src="src/meteor-shower.gif" height="600" width="600"
-                class="fixed-center initial-transparent">
+        <div class="section-content fixed-center">
+            <img id="meteor-gif" src="assets/src/meteor-shower.gif" height="600" width="600" class="initial-transparent">
             <h2 id="luck-text" class="text absolute-center initial-transparent">Is it luck?</h2>
         </div>
     </div>
@@ -136,42 +198,370 @@
         </div>
     </div>
 
-    <div class="space-200"></div>
+    <br>
+
+    <!-- 正文标题 -->
+    <div class="section">
+        <img src="assets/src/title-logo.png" height="450" width="450"
+            style="border:1px solid black; box-shadow: 3px 3px black;">
+        <h1 class="title">WHAT DOES IT TAKE</h1>
+        <h2 class="title">TO BE A</h2>
+        <h1 class="title">NOBEL LAUREATE?</h1>
+        <h3 class="title">by <a href="https://www.linkedin.com/in/xiangyu-wong">Wong Xiangyu</a>, Ooi Le Yi, Teoh Zhi
+            Min | May - June 2023</h3>
+        <br>
+        <p id="instruction-text" style="font-family:monospace">Disclaimer: This is a project for our Data
+            Visualization class, the focus is on the visualization. <br>The conclusions made may be imprecise and are
+            more for data exploration purposes.<br>More data
+            and more rigorous analysis are needed to examine the conclusions. </p>
+    </div>
 
     <!-- 正文 -->
 
     <div class="section">
         <div class="section-content absolute-center">
+            <div class="description">
+                <p>To investigate the question, we used <strong>a <a
+                            href="https://www.nature.com/articles/s41597-019-0033-6">dataset</a> that covers publication
+                        records for almost all
+                        Nobel
+                        laureates in Physics, Chemistry, and Physiology or Medicine from 1900 to 2016 (545 out of 590,
+                        92.4%)</strong>.
+                    <br>
+                    <br>We have designed <strong>6 sub-questions</strong> to explore the possible answers.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Graph 1 -->
+    <div class="section">
+        <div class="section-content absolute-center">
+            <h2>How many papers they had published before they received the prize?</h2>
+            <p id="instruction-text" style="font-family:monospace">Hover the mouse over the points for more information
+            </p>
+            <div class="description">
+                <p><strong>The cumulative publication volume of the laureates before being awarded in the field of
+                        Chemistry is almost twice that of the fields
+                        of Physics and Medicine & Physiology</strong>. The distribution of scattered points also
+                    reflects that scholars in the field of
+                    Chemistry generally publish more papers than the other fields, especially after 1970.</p>
+            </div>
+            <div id="graph-1a" style="position:relative">
+                <div id="tooltip_1a" class="tooltip"></div>
+            </div>
+            <div id="graph-1b" style="position:relative">
+                <div id="tooltip_1b" class="tooltip"></div>
+            </div>
+            <div id="graph-1c" style="position:relative">
+                <div id="tooltip_1c" class="tooltip"></div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="description">
+        <p>The distribution of cumulative publications in the fields of Physics and Medicine & Physiology is roughly
+            similar. </p>
+        <p>In the field of Physics, the laureate who had published the most papers before being awarded the
+            Nobel Prize is Omura, S who had published a total of 949 documents in 49 years. However, this
+            number is smaller when compared with Olah, G who had published 1213 documents in 38 years , and Stoddart, J
+            who had published 1103 documents in 46 years, both in the field of Chemistry.</p>
+        <p>In the field of Medicine and Physiology, Akasaki, Isamu who had published 612 articles in 39 years, Amona,
+            Hiroshi who had published 605 articles in 29 years, and Nakamura, Shuji who had published 549 articles in 27
+            years are the ones who had the highest cumulative publications before being awarded.</p>
+    </div> -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="description">
+        <p>The visualization results in the fields of Physics and Medicine & Physiology reflect that <strong>the number
+                of
+                publications in these two fields may not be one of the main contributing factors</strong> of a Nobel
+            Prize.</p>
+        <p>We also notice that the cumulative number of published papers before being awarded is increasing. This trend
+            is especially
+            obvious in the field of Chemistry.</p>
+    </div>
+
+    <div class="space-200"></div>
+    <div class="space-200"></div>
+
+    <!-- Graph 6 -->
+    <div class="section">
+        <div class="section-content absolute-center">
+            <h2>How many years have they waited?</h2>
+
+            <div class="description">
+                <p>Papers that won the Nobel Prize are not necessarily the latest publications of the year. It is
+                    relatively normal to not to receive enthusiastic responses and win awards immediately
+                    after publication. <strong>Many publications have to wait for more than 10 years before they are
+                        awarded.</strong> The
+                    most common intervals between awards are 9, 11, and 16 years.
+                </p>
+            </div>
+            <h3 style="font-weight: 400">Number of Awarded Article vs. Years of Gap between Publication and Award</h3>
+            <p id="instruction-text" style="font-family:monospace">Hover the mouse over the bars for more information
+            </p>
+            <div id="container_6" class="container"></div>
+            <div id="tooltip_6" class="tooltip"></div>
+            <div id="button_div_6"></div>
+            <div class="description">
+                <p>On the contrary, quite a lot of documents waited for a long period. It may be because the research
+                    involved was too advanced at its time of publication, hence was overlooked and had to wait for a
+                    time when the insights from the research will be valuable.
+                    <br>
+                    <br>
+                    <strong>These papers which involve "premature scientific discovery" or "delayed recognition" of the
+                        literature are also known as "Sleeping Beauties".</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="space-200"></div>
+    <div class="space-200"></div>
+
+    <!-- Graph 3 -->
+    <div class="section">
+        <div class="section-content">
+            <h2>Which country gets the most Nobel prizes?</h2>
+            <p id="instruction-text" style="font-family:monospace">Click on the year label to view the distribution for
+                that year</p>
+            <p id="instruction-text" style="font-family:monospace">The legend and play button is below the diagram</p>
+            <div id="graph-3">
+            </div>
+            <div class="description">
+                <p>The cumulative number of papers published by award-winning scholars in the <strong>United
+                        States</strong> is
+                    significantly higher than that of scholars from other countries. After the United States,
+                    <strong>Canada and the United
+                        Kingdom</strong> have more Nobel Prize winners than other countries. The former has highly
+                    recognized
+                    achievements in the field of Physics, while the latter has outstanding achievements in the fields of
+                    Medicine & Physiology.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="space-200"></div>
+    <div class="space-200"></div>
+
+    <!-- Graph 2 -->
+    <div class="section">
+        <div class="section-content">
+            <div id="container_2">
+                <div id="body">
+                    <h2>Do researchers affiliated with certain institutions have advantage over the others?</h2>
+                    <div class="description">
+                        <p>It can be seen that the <strong>top three in the data are Harvard University, Cambridge
+                                University
+                                and Stanford University</strong>. Among them, Harvard University has significantly more
+                            Nobel Prize
+                            winners than other schools, 40% more than the second-ranked Cambridge University. It can be
+                            seen that it is well deserved to be ranked first in the QS ranking in 2016.
+                        </p>
+                    </div>
+
+                    <div id='title'>Nobel Prize Distribution by Affiliation</div>
+                    <p id="instruction-text" style="font-family:monospace">Hover the mouse over the name of institutions
+                        to view the connections more clearly</p>
+
+                    <div id="chart"></div>
+                    <div id="buttonWrapper">
+                        <div id="buttonWrapperInner">
+                            <!-- <div id="show" class="sideButton">SHOW</div> -->
+                            <div id="reset" class="sideButton">RESET</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="description">
+                        <p>The more interesting phenomenon in the data is the <strong> biased research direction
+                            </strong>of institutions/universities.
+                            <br>
+                            <br>
+
+                            Compared with other disciplines, the field of Physiology or Medicine may be more
+                            specialized, and hence
+                            there are specialized institutions/universities to specialize in this direction. For
+                            example, the research focus of Rockefeller University and the National Institutes of Health
+                            is inclined to Physiology or Medicine. Although they may not be the best in terms of
+                            comprehensive strength, they are the best in these fields. Researchers affiliated with them
+                            have won awards even more than those of Harvard University.
+                        </p>
+                    </div>
+                    <br>
+                    <div class="description">
+                        <p><strong> Insights: when we choose a university, we should make choices based on our research
+                                interests and directions. A university with a higher ranking may not necessarily be the
+                                best
+                                solution.</strong>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="space-200"></div>
+    <div class="space-200"></div>
+
+    <!-- Graph 4 -->
+    <div class="section">
+        <div class="section-content absolute-center">
             <h2>Is it easy to be awarded more than once?</h2>
+            <p id="instruction-text" style="font-family:monospace">Hover the mouse over the points for more information
+            </p>
             <div id="container_4" class="container" style="position:relative">
                 <div id="tooltip_4" class="tooltip"></div>
             </div>
-        </div>
-    </div>
-
-
-    <div class="section">
-        <div class="section-content absolute-center">
-            <h2>Container_5</h2>
-            <div id="container_5" class="container" style="position:relative">
-
-                <div id="container_chem_5" class="column">
-                    <h3>Chemistry</h1>
-                        <div id="tooltip_chem_5" class="tooltip"></div>
-                </div>
-
-                <div id="container_phy_5" class="column">
-                    <h3>Physics</h1>
-                </div>
-
-                <div id="container_med_5" class="column">
-                    <h3>Medicine</h1>
-                </div>
+            <div class="description">
+                <p><strong>Only 4 out of 590 laureates are awarded twice</strong> (one of them involves the Nobel Peace
+                    Prize so it is
+                    not shown
+                    here).
+                    <br>
+                    <br>
+                    The first person in history to accomplish the feat of twice receiving a Nobel Prize was the Polish
+                    scientist <strong>Marie Skłodowska Curie</strong> (7th November, 1867- 4th July, 1934), first
+                    awarded the prize in Physics and, later, in Chemistry. She was awarded for her researches in the
+                    radiation phenomena, and then later, the discovery of the elements radium and polonium.
+                    <br>
+                    <br>
+                    <strong>John Bardeen</strong> (23rd May, 1908 – 30th January, 1991) is the only scientist in history
+                    to have received
+                    two Nobel Prizes in the Physics category. He is first awarded for researches on semiconductors and
+                    the discovery of the transistor effect, then awarded again for the theory of superconductivity,
+                    jointly developed with two other laureates.
+                    <br>
+                    <br>
+                    <strong>Frederick Sanger</strong> (13th August, 1918 – 19th November, 2013) is an enthusiast of
+                    biochemistry who
+                    succeeded in determining the amino acid sequence of a protein and, later, developing a method to
+                    read DNA.
+                </p>
             </div>
         </div>
     </div>
 
-    <h2>TEST</h2>
+    <div class="space-200"></div>
+    <div class="space-200"></div>
+    <div class="space-200"></div>
+
+    <!-- Graph 5 -->
+    <div class="section">
+        <div class="section-content absolute-center">
+            <h2>Is there an underlying relation between these 3 fields?</h2>
+            <div class="description">
+                <p>We want to investigate if there is an underlying relation between the topics in the three fields of
+                    study. Therefore, we did a <strong>topic analysis using Latent Dirichlet Allocation (LDA)
+                        model</strong>.
+                    <br> <br>If there is a
+                    clear distinction between the three fields, then each field should clearly incline to one of the
+                    three topics. From the movement of circles within the ternary plot, we can tell that there is a
+                    change in the topic that the laureates are interested in (each circle represent a laureate)
+                </p>
+            </div>
+            <div>
+                <p id="instruction-text" style="font-family:monospace">Slide left or right to find out</p>
+                <!-- 调整年份的slider -->
+                <input type="range" name="yrSlider_5" id="yrSlider_5" min="1907" max="2016" value="1907"
+                    style="margin:0">
+                <div style="font-family:monospace">
+                    <p style="margin:0">Year: <span id="selectedYr">1907</span></p>
+                </div>
+            </div>
+            <button id="allYearButton_5" class="custom-button">Show me all years</button>
+            <p id="instruction-text" style="font-family:monospace">Hover the mouse over the points for more information
+            </p>
+            <div id="container_5" class="container">
+                <div id="container_chem_5" class="column" style="position:relative">
+                    <h3>Chemistry</h3>
+                    <div id="tooltip_chem_5" class="tooltip"></div>
+                </div>
+
+                <div id="container_phy_5" class="column" style="position:relative">
+                    <h3>Physics</h3>
+                    <div id="tooltip_phy_5" class="tooltip"></div>
+                </div>
+
+                <div id="container_med_5" class="column" style="position:relative">
+                    <h3>Medicine & Physiology</h3>
+                    <div id="tooltip_med_5" class="tooltip"></div>
+                </div>
+            </div>
+            <p id="instruction-text" style="font-family:monospace">Each circle represents a laureate;<br>its position
+                represents their topic of interest in that year (or average topic of interest, when all years are taken
+                into calulation)</p>
+            <br>
+            <div class="description">
+                <p><strong>Papers in the Medicine or Physiology field are highly inclined to Topic 2</strong>. Keywords
+                    of Topic 2
+                    includes penicillium, methylglutaryl, tumors, antifungal, lymphocyte, gastric and etc. We can see
+                    that the LDA model performs best in differentiating the papers in this field.
+                    <br>
+                    <br>
+                    However, <strong>this is not the case for papers from Physics and Chemistry. This may because of the
+                        underlying close relation between these two fields</strong>. According to Wikipedia, they are
+                    "branches of
+                    science that both study matter" and "physics and chemistry may overlap when the system under study
+                    involves matter composed of electrons and nuclei made of protons and neutrons".
+                </p>
+            </div>
+            <br>
+            <br>
+
+        </div>
+    </div>
+
+    <div class="space-200"></div>
+
+
+    <!-- Conclusion -->
+    <div class="section">
+        <div class="section-content absolute-center">
+            <h2>What conclusion can we make?</h2>
+            <div class="description">
+
+                <div style="width: 90%; margin: auto; text-align: left;">
+                    <li class="conclusion-list">Publish quite a lot of papers, especially if you want an award in the
+                        field of Chemistry.</li>
+
+                    <li class="conclusion-list">Be prepared to wait for 10 years (on average).</li>
+
+                    <li class="conclusion-list">Certain institutions are at the forefront of the field. Find out which
+                        country and institution are the best in the research topic you are interested in.</li>
+
+                    <li class="conclusion-list">Probability of winning the prize twice in these fields is low (0.54%),
+                        <s>don't think about it</s>.
+                    </li>
+
+                    <li class="conclusion-list">Working on a research topic related to Physics and Chemistry may give
+                        you more choices of topics
+                        & help you gain advantage to be awarded in these two fields due to their underlying relation.
+                    </li>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <p id="instruction-text" style="font-family:monospace">Source of data: <a
+            href="https://www.nature.com/articles/s41597-019-0033-6">Scientific Data</a></p>
+    <p id="instruction-text" style="font-family:monospace">Produced by Wong Xiangyu, Ooi Le Yi, Teoh Zhi Min | Data
+        Visualization, Peking University, May-June 2023</p>
+    <p id="instruction-text" style="font-family:monospace">Disclaimer: This is a project for our Data
+        Visualization class, the focus is on the visualization. <br>The conclusions made may be imprecise and are more
+        for data exploration purposes.<br>More data
+        and more rigorous analysis are needed to examine the conclusions. </p>
+    <br>
+
+
 
 </body>
 
@@ -180,16 +570,24 @@
 <!-- 导入D3的颜色 -->
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <!-- 数据可视化的js file-->
-<script src="graph-4-5.js"></script>
+<script src="assets/js/graph-1.js"></script>
+<script src="assets/js/chords1.js"></script>
+<script src="assets/js/graph-3.js"></script>
+<script src="assets/js/graph-4-5.js"></script>
+<script src="assets/js/graph6.js"></script>
 <!-- JQUERY -->
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <!-- 处理Scroll Events -->
 <script type="text/javascript">
+    var delayInMilliseconds = 1000; //1 second
+    setTimeout(function () {
+        $("#instruction-text").css("opacity", 100);
+    }, delayInMilliseconds);
     // var currentElem = document.getElementById("section1").nextElementSibling;
     // console.log(currentElem);
     // 根据window.scrollY调整透明度
     $(document).on("scroll", function () {
-        console.log(window.scrollY)
+        // console.log(window.scrollY)
         if (window.scrollY > 1800 && window.scrollY < 3400) {
             $("#meteor-gif").css("opacity", (window.scrollY - 2000) / 800);
             $("#luck-text").css("opacity", (window.scrollY - 2000) / 800);
@@ -198,6 +596,7 @@
             $("#luck-text").css("opacity", 0);
         }
     })
+
 </script>
 
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>What does it take to be a Nobel laureate?</title>
-    <link rel="icon" href="src/title-logo.png">
+    <link rel="icon" href="assets/src/title-logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
@@ -65,11 +65,14 @@
 
     <div id="section1" class="section">
         <div class="column elem1">
-            <p><img class="center-img" src="src/title_bg.png" height="500" width="500"></p>
+            <p><img class="center-img" src="assets/src/title_bg.png" height="500" width="500"></p>
+            <div class="text-center">
+                <p id="instruction-text" style="font-family:monospace; color:aliceblue">Scroll down to START...</p>
+            </div>
         </div>
 
         <div class="column elem2">
-            <p><img class="center-img" src="src/title_fg-removebg.png" height="500" width="500"></p>
+            <p><img class="center-img" src="assets/src/title_fg-removebg.png" height="500" width="500"></p>
         </div>
     </div>
 
@@ -89,8 +92,10 @@
 <script type="text/javascript">
     // 移动fg和显示START button
     $(document).on("scroll", function () {
-        if (window.scrollY < 770) {
-            $("#start-btn").css("opacity", 0);;
+        $("#instruction-text").css("opacity", 0);
+        // console.log(window.scrollY);
+        if (window.scrollY < 800) {
+            $("#start-btn").css("opacity", 0);
             $("#section1 .elem2").css("top", (1200 - window.scrollY) + "px");
         } else {
             $("#start-btn").css("opacity", 100);

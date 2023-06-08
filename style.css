@@ -1,0 +1,123 @@
+body {
+    /* overflow: hidden; */
+    margin: 0;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    /*font-family: Oswald;*/
+    /*font-family: "Helvetica Neue", Helvetica;*/
+  }
+
+  #container_2 #title{
+    z-index: 1;
+    display: block;
+    font-family: Oswald;
+    font-size: 36px;
+    font-weight: 300;
+    color: #6B6B6B;
+    position: relative;
+    width: 640px;
+    height: 70px;
+    text-align: center;	
+    /* overflow: hidden;	 */
+    text-align: center;
+    margin: 0 auto;
+    /* margin-top: 30px; */
+  }
+
+  #container_2 #show {
+    z-index: 1;
+    display: block;
+    font-family: Oswald;
+    font-size: 36px;
+    font-weight: 300;
+    color: #363636;
+    position: relative;
+    /*width: 80px;*/
+    text-align: center;
+    width: 30%;
+    margin: 0 auto;
+    border: 1px solid;
+    border-color: #363636;
+    cursor: pointer;
+      }
+
+  
+  #container_2 #reset {
+    z-index: 1;
+    display: block;
+    font-family: Oswald;
+    font-size: 22px;
+    font-weight: 300;
+    color: #363636;
+    position: relative;
+    /*width: 80px;*/
+    text-align: center;
+    width: 30%;
+    margin: 0 auto;
+    border: 1px solid;
+    border-color: #363636;
+    cursor: pointer;
+  }
+  
+
+
+  #container_2 #buttonWrapper{
+    z-index: 1;
+    display: block;
+    font-family: Oswald;
+    font-size: 14px;
+    font-weight: 300;
+    color: #6B6B6B;
+    position: relative;
+    width: 640px;
+    text-align: center;	
+    /* overflow: hidden;	 */
+    text-align: center;
+    margin: 0 auto;
+    /* margin-top: 30px; */
+  }
+  
+  #container_2 #buttonWrapperInner{
+      position: relative;
+      width: 300px;
+      height: 30px;
+      margin: 0 auto;
+  }
+  
+  
+
+  /* #container_2 #reset{
+    width: 110px;
+    cursor: pointer;	
+    float: left;			  
+  } */
+
+  
+  #container_2 line {
+    stroke: #000;
+    stroke-width: 1.px;
+  }
+
+  #container_2 text {
+    font-size: 20px;
+  }
+
+  #container_2 .titles{
+    font-size: 18px;
+  }
+
+  #container_2 .explanation{
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+  }
+  
+  #container_2 path.chord {
+    fill-opacity: .90;
+  }
+  
+  #container_2 a {
+      text-decoration: none;
+      color: #6B6B6B;
+  }
