@@ -4014,7 +4014,7 @@ function autoPlay_3 () {
     button++;
 }
 
-var interval_3 = setInterval(autoPlay_3, 2000)
+var interval_3 = setInterval(autoPlay_3, 1000)
 // 停止播放
 function stopPlay_3 () {
     clearInterval(interval_3);

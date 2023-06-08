@@ -579,7 +579,7 @@ Promise.all([
                 .style("visibility", "visible")
                 .style("left", "75%")
                 .style("transform", "translateX(-50%)")
-                .style("top", 40 + "px")
+                .style("top", 35 + "px")
         })
         .on("mouseout", function () {
             d3.select("#tooltip_chem_5")
@@ -630,7 +630,7 @@ Promise.all([
                 .style("visibility", "visible")
                 .style("left", "75%")
                 .style("transform", "translateX(-50%)")
-                .style("top", 40 + "px")
+                .style("top", 35 + "px")
         })
         .on("mouseout", function () {
             d3.select("#tooltip_phy_5")
@@ -681,7 +681,7 @@ Promise.all([
                 .style("visibility", "visible")
                 .style("left", "75%")
                 .style("transform", "translateX(-50%)")
-                .style("top", 40 + "px")
+                .style("top", 35 + "px")
         })
         .on("mouseout", function () {
             d3.select("#tooltip_med_5")
@@ -725,7 +725,7 @@ Promise.all([
                     .style("visibility", "visible")
                     .style("left", "75%")
                     .style("transform", "translateX(-50%)")
-                    .style("top", 40 + "px")
+                    .style("top", 35 + "px")
             })
             .on("mouseout", function (event, d) {
                 d3.select(tooltipID)
@@ -898,7 +898,7 @@ Promise.all([
                     .style("visibility", "visible")
                     .style("left", "75%")
                     .style("transform", "translateX(-50%)")
-                    .style("top", 40 + "px")
+                    .style("top", 35 + "px")
             })
             .on("mouseout", function () {
                 d3.select(tooltipID)
