@@ -34,7 +34,7 @@
 
         .text {
             /* color: aliceblue; */
-/*             
+            /*             
             font-family: "Candara"; */
         }
 
@@ -47,14 +47,14 @@
 
         .elem2 {
             position: fixed;
-            top: 1200px;
+            top: 160%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
 
         #start-btn {
             position: fixed;
-            top: 10%;
+            top: 90%;
             /* left: 70%; */
             transform: translateX(-50%);
             opacity: 0;
@@ -81,11 +81,11 @@
     <div class="text-center">
         <a id="start-btn" role="button" class="btn btn-warning" href="visualization.html"><strong>START</strong></a>
     </div>
-    
+
     <!-- <div id="section2" class="section">
         
     </div> -->
-   
+
 
 </body>
 
@@ -94,15 +94,35 @@
     // 移动fg和显示START button
     $(document).on("scroll", function () {
         $("#instruction-text").css("opacity", 0);
-        // console.log(window.scrollY);
-        if (window.scrollY < 800) {
-            $("#section1 .elem2").css("top", (1200 - window.scrollY) + "px");
+        console.log("scrolly", window.scrollY);
+        console.log("innerheight", window.innerHeight)
+        var HEIGHT = window.innerHeight
+        // if (window.matchMedia('(max-device-width: 960px)').matches) {
+        //     if (window.scrollY < 800) {
+        //         $("#section1 .elem2").css("top", (1000 - window.scrollY) + "px");
+        //     }
+        //     if (window.scrollY < 700) {
+        //         $("#start-btn").css("opacity", 0);
+        //     } else {
+        //         $("#start-btn").css("opacity", 100);
+        //     }
+        // }
+        var STOP = 0.75 * HEIGHT
+        var bodyHeight = document.body.scrollHeight
+        console.log(bodyHeight)
+        console.log(window.scrollY / innerHeight)
+        // console.log("stop", STOP)
+        if (160 - window.scrollY / innerHeight * 110 > 55) {
+            $("#section1 .elem2").css("top", (160 - (window.scrollY) / innerHeight * 110)  + "%");
+            console.log("here", 160 - window.scrollY / innerHeight * 110, "%")
         }
         if (window.scrollY < 700) {
             $("#start-btn").css("opacity", 0);
         } else {
             $("#start-btn").css("opacity", 100);
-        } 
+        }
+        console.log("")
     })
 </script>
+
 </html>
