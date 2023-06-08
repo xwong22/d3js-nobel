@@ -54,7 +54,8 @@
 
         #start-btn {
             position: fixed;
-            top: 90%;
+            top: 10%;
+            /* left: 70%; */
             transform: translateX(-50%);
             opacity: 0;
         }
@@ -95,10 +96,7 @@
         $("#instruction-text").css("opacity", 0);
         // console.log(window.scrollY);
         if (window.scrollY < 800) {
-            $("#start-btn").css("opacity", 0);
             $("#section1 .elem2").css("top", (1200 - window.scrollY) + "px");
-        } else {
-            $("#start-btn").css("opacity", 100);
         }
         if (window.scrollY < 700) {
             $("#start-btn").css("opacity", 0);

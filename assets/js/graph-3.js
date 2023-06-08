@@ -1,4 +1,4 @@
-var field_color = ["#c77dff", "#80a4d9", "#52b788"];
+var field_color = ["#c77dff",  "#52b788", "#80a4d9"];
 var group_cum_color = ["#ffe04e", "#ffe66e", "#ffec8d", "#fff1ad", "#fff7cc"] // 圆周深，圆心浅
 var playButton_color = "#379796"
 var playPause_color = "#ffffff"

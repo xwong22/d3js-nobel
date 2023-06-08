@@ -31,7 +31,7 @@ var svg_4 = d3.select("#container_4")
 // A color scale for groups:
 var scale_color = d3.scaleOrdinal()
     .domain(["Physics", "Medicine", "Chemistry"])
-    .range(["#52b788", "#80a4d9", "#C77DFF"]);
+    .range(["#80a4d9", "#52b788", "#C77DFF"]);
 
 // 根据年份scale x轴
 var scale_x_4 = d3.scaleLinear()
