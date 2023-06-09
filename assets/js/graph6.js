@@ -285,7 +285,7 @@ d3.csv("assets/data/prize_pub_year_all.csv").then(function (dataset) {
     .attr("y", yScale_6(averagePaperCount) - 5) // 上移一些距离以避免与平均线重叠
     .attr("text-anchor", "end")
     .text("Average article count: " + averagePaperCount.toFixed(2))
-    .style("font-size", "12px");
+    .style("font-size", "15px");
 });
 
 
