@@ -2,6 +2,8 @@
 
 This is our team's d3.js project for our 2023 Data Visualization class at Peking University.
 
+The project is currently hosted at https://xwong22.github.io/d3js-nobel/.
+
 ## A basic introduction for the folders and files:
 
 * assets
@@ -15,3 +17,6 @@ This is our team's d3.js project for our 2023 Data Visualization class at Peking
 
 ## Disclaimer: 
 This is a project for our Data Visualization class, the focus is on the visualization.The conclusions made may be imprecise and are more for data exploration purposes.More data and more rigorous analysis are needed to examine the conclusions.
+
+
+Updated: 13th June 2023
