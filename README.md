@@ -6,7 +6,7 @@ This is our team's d3.js project for our 2023 Data Visualization class at Peking
 
 * assets
     * data: Folder containing CSV and JSON data files for all visualization..
-    * js: Folder containing six JavaScript files for the visualizations.
+    * js: Folder containing JavaScript files for all six visualizations.
     * src: Folder containing image files such as GIF and PNG.
 * index.html: HTML file for the homepage.
 * visualization.html: HTML file containing all storylines and visualizations.
